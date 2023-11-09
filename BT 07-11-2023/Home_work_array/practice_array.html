@@ -30,7 +30,8 @@
       let array13 = [1, 2, 3, 4, 5, 6, 7];
       let array23 = [];
       for (let i = 0; i < array13.length; i++) {
-        array23.push(array13[i] * array13[i]);
+        array23.push(array13[i] * array13[i]);  //Cách 1:
+        //cách 2:array23.push(Math.pow(array13[i], 2));
       }
       console.log(array23); // Output: [1, 4, 9, 16, 25, 36, 49]
 
@@ -45,6 +46,7 @@
        * 30 200
        * 40 100
        */
+      // Cách 1:
       let array34 = [];
       for (let i = 0; i < array14.length; i++) {
         document.write(
@@ -53,13 +55,18 @@
           }`
         );
       }
+      // Cách 2: 
+      //         array24.reverse();
+      //          for (let i in array14) {
+      //          document.write(`${array14[i]} ${array[i]}<br>` )
+      // }
 
       // Bài 5: Đếm xem trong array có tổng cộng bao nhiêu số 20
       let array15 = [5, 10, 15, 20, 25, 50, 20];
       let total = 0;
       for (let i = 0; i < array15.length; i++) {
         if (array15[i] === 20) {
-          total++;
+          total++; // Cách 2: total +=1
         }
       }
       console.log(total); // Output: 2
@@ -68,17 +75,29 @@
       let array16 = [5, 10, 15, 20, 25, 50, 20];
       array16[3] = "200";
       array16[6] = "200";
-      document.write(`Bài 5: ${array16}`); // Output: [5, 10, 15, 200, 25, 50, 20]
+      // Cách 2: 
+      //  for (let i = 0;i<array16.length;i++) {
+                  // if (array16[i] == 20) {
+                  // array16[i] ==200;
+      //             }
+      //          }
+      document.write(`Bài 6: ${array16}`); // Output: [5, 10, 15, 200, 25, 50, 200]
 
       // Bài 7: Hãy tạo ra một array mới bằng cách gộp hai array ban đầu.
       let array17 = ["Hello ", "take "];
       let array27 = ["Dear", "Sir"];
       let array37 = [];
-      for (let i = 0; i < array17.length; i++) {
-        for (let j = 0; j < array27.length; j++) {
-          array37.push(array17[j] + array27[j]);
+      for (let i in array17) {
+        for (let j in array27) {
+            array37.push(aray17[i] +array27[j])
         }
       }
+      // Cách 2:
+      // for (let i = 0; i < array17.length; i++) {
+      //   for (let j = 0; j < array27.length; j++) {
+      //     array37.push(array17[i] + array27[j]);
+      //   }
+      // }
 
       console.log(array37); // Output: ["Hello Dear", "Hello Sir", "take Dear", "take Sir"]
     </script>
