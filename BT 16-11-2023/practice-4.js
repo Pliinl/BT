@@ -18,6 +18,11 @@
  *
  * */
 
-function findPrimes(nStart, nEnd) {}
-
+function findPrimes(nStart, nEnd) {
+  for (let i = nStart; i <= nEnd; i++) {
+    if (isPrimeNumber(i)) {
+      console.log(i);
+    }
+  }
+}
 findPrimes(2, 24);
