@@ -19,38 +19,39 @@
  */
 
 class Vehicle {
-  constructor(ownerName, vehicleType, engineCapacity, value) {
-    this.ownerName = ownerName;
-    this.vehicleType = vehicleType;
-    this.engineCapacity = engineCapacity;
-    this.value = value;
+  constructor(ownerName, vehicleType, cylinderCapacity, cost) {
+    this.ownerName = ownerName;//Tên chủ sở hữu
+    this.vehicleType = vehicleType; //Loại phương tiện
+    this.cylinderCapacity = cylinderCapacity;// Dung tích xy lanh
+    this.cost = cost;// Trị giá
   }
+  taxValue() {
+    let taxValue = 0; // Giá trị thuế
 
-  calculateTax() {
-    let tax = 0;
-    if (this.engineCapacity < 100) {
-      tax = 0.01 * this.value;
-    } else if (this.engineCapacity >= 100 && this.engineCapacity <= 200) {
-      tax = 0.03 * this.value;
+    if (this.cylinderCapacity < 100) {
+      taxValue = 0.01 * this.cost;
+    } else if (this.cylinderCapacity >= 100 && this.cylinderCapacity <= 200) {
+      taxValue = 0.03 * this.cost;
     } else {
-      tax = 0.05 * this.value;
+      taxValue = 0.05 * this.cost;
     }
-    return tax;
-  }
 
-  showInfo() {
-    const tax = this.calculateTax();
-    console.log(`Tên chủ xe: ${this.ownerName}`);
-    console.log(`Loại xe: ${this.vehicleType}`);
-    console.log(`Dung tích xylanh: ${this.engineCapacity}cc`);
-    console.log(`Trị giá xe: ${this.value} VNĐ`);
-    console.log(`Thuế trước bạ phải nộp: ${tax} VNĐ`);
+    return taxValue;
+  }
+  showInfo() { // Hiển thị thông tin
+    console.log("-----------");
+    console.log(`OwnerName: ${this.ownerName}`);
+    console.log(`VehicleType: ${this.vehicleType}`);
+    console.log(`CylinderCapacity: ${this.cylinderCapacity}`);
+    console.log(`Cost: ${this.cost}`);
+    console.log(`Tax Value: ${this.taxValue()}`);
+    console.log("-----------");
   }
 }
+vehicle1 = new Vehicle("Nguyen Van A","Wave", "125", "95000000");
+vehicle2 = new Vehicle("Nguyen Van B","SH", "150", "125000000");
 
-// Tạo các đối tượng Vehicle
-const vehicle3 = new Vehicle("Lê Hồng Đức Plinl", "Xe máy", 125, 95500000);
+vehicle1.showInfo();
+vehicle2.showInfo();
 
-// In ra thông tin các đối tượng
-console.log("Thông tin xe Wave 125i:");
-vehicle3.showInfo();
+
